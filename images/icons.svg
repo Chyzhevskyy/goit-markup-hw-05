@@ -121,6 +121,8 @@
     </symbol>
   </defs>
 </svg>
-<svg class="icon icon-modal-close">
-  <use xlink:href="#icon-modal-close"></use>
-</svg>
+<symbol id="icon-close-modal" viewBox="0 0 32 32">
+  <path
+    d="M32 3.224l-3.224-3.224-12.776 12.776-12.776-12.776-3.224 3.224 12.776 12.776-12.776 12.776 3.224 3.224 12.776-12.776 12.776 12.776 3.224-3.224-12.776-12.776 12.776-12.776z">
+  </path>
+</symbol>
