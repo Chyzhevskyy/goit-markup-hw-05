@@ -101,6 +101,15 @@ header {
     color: var(--navy-blue);
 }
 
+.nav-link {
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
+
+}
+
+
 
 .nav-link:hover {
     color: var(--ocean);
@@ -118,14 +127,10 @@ header {
     display: flex;
     gap: 40px;
 
-
-
-
-
-
 }
 
 .nav-link {
+    position: relative;
     color: var(--navy-blue-modal);
     font-family: Roboto, sans-serif;
     font-style: medium;
@@ -133,14 +138,26 @@ header {
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    display: flex;
     padding: 24px 0px;
     display: block;
+}
 
-
+.nav-link::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--ocean);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 
 
 }
+
+
 
 .web-color {
     font-family: Raleway;
@@ -187,6 +204,13 @@ header {
 
 }
 
+.contakts-item {
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
+}
+
 .contakts-item:hover {
 
 
@@ -210,6 +234,11 @@ header {
 
 /* hero saction */
 
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
 
 
 .hero-item {
@@ -251,17 +280,21 @@ header {
     min-width: 169px;
     height: 56px;
     border: none;
-
-}
-
-.hero-button {
     color: var(--white);
 
+    transition-property: background-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
+
 }
+
+
 
 .hero-button:hover {
     background-color: var(--ocean);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
 }
 
 .hero-button:focus {
@@ -384,6 +417,11 @@ header {
     height: 40px;
     border-radius: 50%;
     background-color: var(--iris);
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
 }
 
 .social-team-svg {
@@ -493,6 +531,11 @@ header {
     border-color: var(--light-slate);
     color: var(--light-slate);
     border-radius: 4px;
+
+    transition-property: border-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
 }
 
 .icon-svg-company {
@@ -550,6 +593,10 @@ header {
     height: 100%;
     border-radius: 50%;
 
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
 }
 
 .footer-social-svg {
@@ -649,6 +696,11 @@ footer {
     border: 1px solid var(--cornflower);
     padding: 12px 24px;
 
+    transition-property: border, background-color, color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
+
 }
 
 .button-filter-item:hover {
@@ -686,21 +738,38 @@ footer {
 .set-item {
     width: calc((100% - 2*24px)/3);
 
+
 }
 
 .link-item {
     display: block;
+    position: relative;
+
+
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
 }
 
-.link-item:hover,
-.link-item:focus {
+.link-item:hover {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+.link-item:hover .overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
 .border {
+    display: block;
     border: 1px solid var(--cornflower);
     border-top: none;
     padding: 32px 16px;
+
+
+
 }
 
 
@@ -727,4 +796,40 @@ footer {
 
 .list {
     list-style: none;
+}
+
+.box {
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    width: 360px;
+    height: 300px;
+    top: 0;
+    background-color: var(--iris);
+    opacity: 0;
+
+
+    transform: translateY(100%);
+    transition-property: translateY(0);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0;
+}
+
+.overlay-label {
+    width: 296px;
+    margin-top: 40px;
+    margin-left: 32px;
+    margin-right: 32px;
+    color: var(--cloud);
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+
 }

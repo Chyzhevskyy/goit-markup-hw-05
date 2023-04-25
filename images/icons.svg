@@ -121,3 +121,6 @@
     </symbol>
   </defs>
 </svg>
+<svg class="icon icon-modal-close">
+  <use xlink:href="#icon-modal-close"></use>
+</svg>
