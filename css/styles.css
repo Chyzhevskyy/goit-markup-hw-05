@@ -105,22 +105,17 @@ header {
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: 0;
-
 }
 
 
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus {
     color: var(--ocean);
 }
 
 .nav-link {
     padding: 24px 0 24px;
-}
-
-.nav-link:focus {
-    color: var(--ocean);
 }
 
 .list-link {
@@ -151,18 +146,12 @@ header {
     width: 48px;
     height: 4px;
     border-radius: 2px;
-
+    background-color: var(--ocean);
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
 
-}
-
-.nav-link.current::after,
-.nav-link:hover::after,
-.nav-link:focus::after {
-    background-color: var(--ocean);
 }
 
 
@@ -708,6 +697,7 @@ footer {
 .modal-btn:hover,
 .modal-btn:focus {
     background-color: var(--ocean);
+    fill: var(--white);
 }
 
 .backdrop.is-hidden {
@@ -718,7 +708,7 @@ footer {
 
 /* Portfolio */
 
-.visualli-hidden-hortfolio {
+.visualli-hidden-portfolio {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -791,10 +781,17 @@ footer {
     gap: 24px;
     padding: 0px;
     row-gap: 48px;
+
 }
 
 .set-item {
     width: calc((100% - 2*24px)/3);
+
+
+}
+
+.box-overlay {
+    overflow: hidden;
 
 
 }
@@ -804,19 +801,21 @@ footer {
     position: relative;
 
 
+
     transition-property: box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: 0;
 }
 
 .link-item:hover {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.link-item:hover .overlay {
+.link-item:hover .overlay,
+.link-item:focus .overlay {
     transform: translateY(0);
-    opacity: 1;
+
+
 }
 
 
@@ -825,6 +824,9 @@ footer {
     border: 1px solid var(--cornflower);
     border-top: none;
     padding: 32px 16px;
+    overflow: hidden;
+
+
 
 
 
@@ -843,6 +845,7 @@ footer {
     line-height: 1.2;
     letter-spacing: 0.02em;
     margin-bottom: 8px;
+
 }
 
 .row-contents {
@@ -850,15 +853,13 @@ footer {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--slate);
+
 }
 
 .list {
     list-style: none;
 }
 
-.box {
-    overflow: hidden;
-}
 
 .overlay {
     position: absolute;
@@ -866,14 +867,12 @@ footer {
     height: 300px;
     top: 0;
     background-color: var(--iris);
-    opacity: 0;
 
 
     transform: translateY(100%);
     transition-property: translateY(0);
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: 0;
 }
 
 .overlay-label {
@@ -889,5 +888,6 @@ footer {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.02em;
+
 
 }
