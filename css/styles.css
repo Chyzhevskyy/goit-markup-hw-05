@@ -826,7 +826,7 @@ footer {
 }
 
 .link-item:hover .overlay-label,
-.link-item:focus .overlay {
+.link-item:focus .overlay-label {
     transform: translateY(0);
 
 
